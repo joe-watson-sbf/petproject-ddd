@@ -1,19 +1,19 @@
-package co.com.sofka.petproject.domain.customer.event;
+package co.com.sofka.petproject.domain.User.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.petproject.domain.customer.value.Address;
-import co.com.sofka.petproject.domain.customer.value.Email;
-import co.com.sofka.petproject.domain.customer.value.FullName;
-import co.com.sofka.petproject.domain.customer.value.PhoneNumber;
+import co.com.sofka.petproject.domain.User.value.Address;
+import co.com.sofka.petproject.domain.User.value.Email;
+import co.com.sofka.petproject.domain.User.value.FullName;
+import co.com.sofka.petproject.domain.User.value.PhoneNumber;
 
-public class CustomerCreated extends DomainEvent {
+public class UserCreated extends DomainEvent {
     protected FullName fullName;
     protected Email email;
     protected Address address;
     protected PhoneNumber phoneNumber;
 
-    public CustomerCreated(FullName fullName, Email email, Address address, PhoneNumber phoneNumber) {
-        super("co.com.sofka.customer.customercreated");
+    public UserCreated(FullName fullName, Email email, Address address, PhoneNumber phoneNumber) {
+        super("co.com.sofka.user.usercreated");
         this.fullName = fullName;
         this.email = email;
         this.address = address;
