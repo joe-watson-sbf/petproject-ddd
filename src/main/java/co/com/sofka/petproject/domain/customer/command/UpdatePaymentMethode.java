@@ -1,17 +1,22 @@
 package co.com.sofka.petproject.domain.customer.command;
 
-import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generic.Command;
 import co.com.sofka.petproject.domain.customer.value.CardExpirationDate;
 import co.com.sofka.petproject.domain.customer.value.Method;
+import co.com.sofka.petproject.domain.customer.value.PaymentMetodId;
 
-public class AddPaymentMethod extends DomainEvent {
+public class UpdatePaymentMethode extends Command {
+    private final PaymentMetodId paymentMetodId;
     private final CardExpirationDate expirationDate;
     private final Method method;
-
-    public AddPaymentMethod(CardExpirationDate expirationDate, Method method) {
-        super("co.com.sofka.petproject.customer.paymentmethodadded");
+    public UpdatePaymentMethode(PaymentMetodId paymentMetodId, CardExpirationDate expirationDate, Method method){
+        this.paymentMetodId = paymentMetodId;
         this.expirationDate = expirationDate;
         this.method = method;
+    }
+
+    public PaymentMetodId getPaymentMetodId() {
+        return paymentMetodId;
     }
 
     public CardExpirationDate getExpirationDate() {
